@@ -1,0 +1,1970 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Javokhirbek Abdullaev — CV</title>
+    <meta name="description" content="Economics Student & Android Developer — Javokhirbek Abdullaev CV website." />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230f0f0f'/%3E%3Ccircle cx='32' cy='32' r='20.5' fill='none' stroke='%23f5a623' stroke-width='1.7' opacity='0.95'/%3E%3Ctext x='32' y='40.5' text-anchor='middle' fill='%23f5a623' font-family='Inter,Arial,sans-serif' font-size='22.5' font-weight='700'%3EJA%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0f0f0f;
+        --text: #f0ede8;
+        --muted: rgba(240, 237, 232, 0.72);
+        --border: rgba(240, 237, 232, 0.12);
+        --accent: #f5a623;
+        --accent-2: rgba(245, 166, 35, 0.18);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --radius-sm: 12px;
+        --container: 1120px;
+        --nav-h: 72px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(100% - 40px, var(--container));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 92px 0;
+        position: relative;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", Inter, system-ui;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+        margin: 0 0 18px;
+      }
+
+      .section-subtle {
+        color: var(--muted);
+        margin-top: -4px;
+      }
+
+      /* Fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 800ms ease, transform 800ms ease;
+        will-change: opacity, transform;
+      }
+      .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Navbar */
+      .nav {
+        position: fixed;
+        inset-inline: 0;
+        top: 0;
+        z-index: 50;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+      }
+
+      .nav::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 15, 15, 0);
+        transition: background 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease;
+        border-bottom: 1px solid rgba(240, 237, 232, 0);
+        pointer-events: none;
+      }
+
+      .nav.scrolled::before {
+        background: rgba(15, 15, 15, 0.72);
+        border-bottom: 1px solid rgba(240, 237, 232, 0.10);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        width: min(100% - 40px, var(--container));
+        margin-inline: auto;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 120px;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(245, 166, 35, 0.38);
+        background: radial-gradient(120% 120% at 20% 20%, rgba(245, 166, 35, 0.18), rgba(245, 166, 35, 0.04));
+        color: var(--accent);
+        font-family: "Space Grotesk", Inter, system-ui;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-name {
+        font-size: 13px;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+        display: none;
+      }
+
+      @media (min-width: 720px) {
+        .brand-name {
+          display: block;
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: rgba(240, 237, 232, 0.86);
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        position: relative;
+        padding: 10px 2px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 6px;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(245, 166, 35, 0), rgba(245, 166, 35, 0.9), rgba(245, 166, 35, 0));
+        transform: scaleX(0);
+        transition: transform 250ms ease;
+        transform-origin: center;
+      }
+
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .btn {
+        border: 1px solid var(--border);
+        background: rgba(240, 237, 232, 0.03);
+        color: var(--text);
+        border-radius: 999px;
+        padding: 11px 16px;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: transform 160ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+        user-select: none;
+        white-space: nowrap;
+      }
+
+      .btn:hover {
+        border-color: rgba(245, 166, 35, 0.45);
+        background: rgba(245, 166, 35, 0.10);
+        box-shadow: 0 10px 30px rgba(245, 166, 35, 0.12);
+        transform: translateY(-1px);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn-primary {
+        border-color: rgba(245, 166, 35, 0.45);
+        background: linear-gradient(180deg, rgba(245, 166, 35, 0.18), rgba(245, 166, 35, 0.08));
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(180deg, rgba(245, 166, 35, 0.26), rgba(245, 166, 35, 0.12));
+      }
+
+      .btn-ghost {
+        background: transparent;
+      }
+
+      .btn-small {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .hamburger {
+        width: 44px;
+        height: 44px;
+        display: none;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(240, 237, 232, 0.03);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .hamburger .lines {
+        width: 18px;
+        height: 14px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .hamburger .lines span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: rgba(240, 237, 232, 0.92);
+        border-radius: 999px;
+        transition: transform 220ms ease, top 220ms ease, opacity 220ms ease;
+      }
+
+      .hamburger .lines span:nth-child(1) {
+        top: 1px;
+      }
+      .hamburger .lines span:nth-child(2) {
+        top: 6px;
+      }
+      .hamburger .lines span:nth-child(3) {
+        top: 11px;
+      }
+
+      .hamburger[aria-expanded="true"] .lines span:nth-child(1) {
+        top: 6px;
+        transform: rotate(45deg);
+      }
+      .hamburger[aria-expanded="true"] .lines span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger[aria-expanded="true"] .lines span:nth-child(3) {
+        top: 6px;
+        transform: rotate(-45deg);
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: grid;
+          place-items: center;
+        }
+        .nav-actions .btn {
+          display: none;
+        }
+      }
+
+      .mobile-panel {
+        position: absolute;
+        top: calc(var(--nav-h) - 8px);
+        left: 20px;
+        right: 20px;
+        background: rgba(15, 15, 15, 0.88);
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transform-origin: top;
+        transform: translateY(-8px) scale(0.98);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 200ms ease, transform 200ms ease;
+        backdrop-filter: blur(14px);
+      }
+
+      .mobile-panel.is-open {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+
+      .mobile-panel .mobile-links {
+        display: grid;
+        padding: 14px;
+        gap: 4px;
+      }
+
+      .mobile-panel a {
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        color: rgba(240, 237, 232, 0.92);
+        font-size: 14px;
+      }
+
+      .mobile-panel a:hover {
+        border-color: rgba(245, 166, 35, 0.35);
+        background: rgba(245, 166, 35, 0.09);
+      }
+
+      .mobile-panel .mobile-actions {
+        padding: 0 14px 14px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding-top: var(--nav-h);
+        overflow: hidden;
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.75) contrast(1.05) brightness(0.6);
+        transform: scale(1.02);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 15, 15, 0.55);
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        gap: 18px;
+        padding: 56px 0;
+      }
+
+      .hero-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: rgba(240, 237, 232, 0.82);
+        letter-spacing: 0.02em;
+      }
+
+      .hero-label::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, rgba(245, 166, 35, 0.85), rgba(245, 166, 35, 0.15));
+        border: 1px solid rgba(245, 166, 35, 0.35);
+      }
+
+      .hero h1 {
+        font-family: "Space Grotesk", Inter, system-ui;
+        font-size: clamp(42px, 5.2vw, 68px);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+        margin: 0;
+      }
+
+      .hero .tagline {
+        font-size: clamp(16px, 2vw, 20px);
+        color: rgba(240, 237, 232, 0.80);
+        margin: 0;
+        max-width: 52ch;
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        left: 50%;
+        bottom: 28px;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: rgba(240, 237, 232, 0.72);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+      }
+
+      .scroll-indicator .arrow {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        display: grid;
+        place-items: center;
+        background: rgba(15, 15, 15, 0.2);
+        transition: transform 200ms ease, border-color 200ms ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .scroll-indicator:hover .arrow {
+        transform: translateY(2px);
+        border-color: rgba(245, 166, 35, 0.35);
+      }
+
+      /* About */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      @media (max-width: 900px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .profile-photo-wrap {
+        width: min(310px, 70vw);
+        aspect-ratio: 1 / 1;
+        border-radius: 999px;
+        padding: 3px;
+        background: radial-gradient(circle at 30% 30%, rgba(245, 166, 35, 0.7), rgba(245, 166, 35, 0.12));
+        border: 1px solid rgba(245, 166, 35, 0.40);
+      }
+
+      .profile-photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(240, 237, 232, 0.02);
+        border: 1px solid rgba(240, 237, 232, 0.10);
+      }
+
+      .profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: contrast(1.02) saturate(0.92) brightness(0.95);
+      }
+
+      .about-bio {
+        margin: 0 0 20px;
+        color: rgba(240, 237, 232, 0.84);
+        font-size: 15.5px;
+        max-width: 65ch;
+      }
+
+      .skills {
+        display: grid;
+        gap: 16px;
+      }
+
+      .skills-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skills-row .badge {
+        background: rgba(240, 237, 232, 0.03);
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        padding: 9px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        color: rgba(240, 237, 232, 0.86);
+        transition: border-color 200ms ease, background 200ms ease, transform 160ms ease;
+        user-select: none;
+      }
+
+      .skills-row .badge:hover {
+        border-color: rgba(245, 166, 35, 0.4);
+        background: rgba(245, 166, 35, 0.10);
+        transform: translateY(-1px);
+      }
+
+      /* Projects */
+      .projects-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 26px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      @media (max-width: 900px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+
+      .project-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(240, 237, 232, 0.12);
+        background: rgba(240, 237, 232, 0.02);
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+        min-height: 360px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        border-color: rgba(245, 166, 35, 0.36);
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55);
+        background: rgba(245, 166, 35, 0.06);
+        transform: translateY(-2px);
+      }
+
+      .project-card .thumb {
+        position: relative;
+        background: rgba(240, 237, 232, 0.02);
+      }
+
+      .project-card .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: contrast(1.02) saturate(0.9);
+        transform: scale(1.02);
+        transition: transform 450ms ease;
+      }
+
+      .project-card .thumb.tutun-thumb {
+        overflow: hidden;
+      }
+
+      .thumb-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 237, 232, 0.3);
+        background: rgba(15, 15, 15, 0.55);
+        color: rgba(240, 237, 232, 0.96);
+        z-index: 4;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        font-size: 0;
+        line-height: 1;
+        backdrop-filter: blur(10px);
+        transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+      }
+      .thumb-nav:hover {
+        background: rgba(245, 166, 35, 0.2);
+        border-color: rgba(245, 166, 35, 0.55);
+      }
+
+      .thumb-nav.left {
+        left: 8px;
+      }
+
+      .thumb-nav.right {
+        right: 8px;
+      }
+
+      .thumb-nav svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .thumb-swiper {
+        display: flex;
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .thumb-swiper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .thumb-swiper img {
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        scroll-snap-align: center;
+        background: #111;
+      }
+
+      .project-card .thumb.wallet-thumb {
+        overflow: hidden;
+      }
+
+      .project-card:hover .thumb img {
+        transform: scale(1.07);
+      }
+
+      .project-card .thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0) 10%, rgba(15, 15, 15, 0.75) 100%);
+        opacity: 0.85;
+        pointer-events: none;
+      }
+
+      .project-card .thumb.wallet-thumb::after {
+        display: none;
+      }
+
+      .project-card .content {
+        padding: 18px 18px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+      }
+
+      .project-card h3 {
+        font-family: "Space Grotesk", Inter, system-ui;
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: rgba(240, 237, 232, 0.78);
+        font-size: 14px;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .tech-tag {
+        font-size: 12.5px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        background: rgba(240, 237, 232, 0.03);
+        color: rgba(240, 237, 232, 0.86);
+      }
+
+      .project-card .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: auto;
+        padding-top: 6px;
+      }
+
+      /* Research card */
+      .research-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(240, 237, 232, 0.12);
+        overflow: hidden;
+        background: rgba(240, 237, 232, 0.02);
+        position: relative;
+        box-shadow: 0 16px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .research-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("research-paper-cover.jpg");
+        background-size: cover;
+        background-position: center;
+        filter: saturate(0.7) contrast(1.05) brightness(0.65);
+        transform: scale(1.03);
+      }
+
+      .research-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 15, 15, 0.70);
+      }
+
+      .research-inner {
+        position: relative;
+        padding: 26px 22px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .research-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(240, 237, 232, 0.78);
+        font-size: 14px;
+      }
+
+      .research-title {
+        font-family: "Space Grotesk", Inter, system-ui;
+        letter-spacing: -0.03em;
+        font-size: 22px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .research-abstract {
+        margin: 0;
+        color: rgba(240, 237, 232, 0.82);
+        font-size: 14.5px;
+        max-width: 78ch;
+      }
+
+      .research-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 2px;
+      }
+
+      .research-author {
+        color: rgba(240, 237, 232, 0.72);
+        font-size: 13.5px;
+      }
+
+      /* Timeline */
+      .timeline-wrap {
+        display: grid;
+        gap: 24px;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 26px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: rgba(240, 237, 232, 0.14);
+      }
+
+      .timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0 0 18px;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -14px;
+        top: 10px;
+        width: 13px;
+        height: 13px;
+        border-radius: 999px;
+        background: rgba(245, 166, 35, 0.16);
+        border: 1px solid rgba(245, 166, 35, 0.5);
+        box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.12);
+      }
+
+      .timeline-card {
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(240, 237, 232, 0.12);
+        background: rgba(240, 237, 232, 0.02);
+        padding: 16px 16px;
+      }
+
+      .timeline-card .top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 12px;
+        align-items: baseline;
+      }
+
+      .timeline-card .role {
+        font-family: "Space Grotesk", Inter, system-ui;
+        letter-spacing: -0.02em;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .timeline-card .company {
+        color: rgba(240, 237, 232, 0.78);
+        font-size: 14.5px;
+      }
+
+      .timeline-card .when {
+        margin-left: auto;
+        color: rgba(240, 237, 232, 0.70);
+        font-size: 13.5px;
+      }
+
+      .timeline-card .desc {
+        margin: 8px 0 0;
+        color: rgba(240, 237, 232, 0.84);
+        font-size: 14.5px;
+      }
+
+      .education-compact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 900px) {
+        .education-compact {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .edu-card {
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(240, 237, 232, 0.12);
+        background: rgba(240, 237, 232, 0.02);
+        padding: 14px 14px;
+      }
+
+      .edu-card .u {
+        font-family: "Space Grotesk", Inter, system-ui;
+        margin: 0;
+        font-size: 15.5px;
+        letter-spacing: -0.02em;
+      }
+
+      .edu-card .meta {
+        color: rgba(240, 237, 232, 0.78);
+        margin-top: 6px;
+        font-size: 13.5px;
+      }
+
+      /* Contact */
+      .contact-inner {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        gap: 18px;
+      }
+
+      .contact-lead {
+        font-family: "Space Grotesk", Inter, system-ui;
+        letter-spacing: -0.03em;
+        font-size: clamp(18px, 2.2vw, 26px);
+        margin: 0;
+        max-width: 34ch;
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(245, 166, 35, 0.35);
+        background: rgba(245, 166, 35, 0.08);
+        color: rgba(240, 237, 232, 0.95);
+        font-size: 14px;
+      }
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+
+      .footer {
+        padding: 18px 0 6px;
+        color: rgba(240, 237, 232, 0.66);
+        font-size: 13.5px;
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+      }
+
+      .modal.is-open {
+        display: block;
+      }
+
+      .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+      }
+
+      .modal-panel {
+        position: absolute;
+        inset: 16px;
+        border-radius: 22px;
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        background: rgba(15, 15, 15, 0.92);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      @media (max-width: 980px) {
+        .modal-panel {
+          grid-template-columns: 1fr;
+          inset: 12px;
+        }
+      }
+
+      .modal-media {
+        border-right: 1px solid rgba(240, 237, 232, 0.10);
+        background: rgba(240, 237, 232, 0.02);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      @media (max-width: 980px) {
+        .modal-media {
+          border-right: none;
+        }
+      }
+
+      .modal-media-header {
+        padding: 14px 14px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .modal-close {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        background: rgba(240, 237, 232, 0.04);
+        color: var(--text);
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        transition: transform 160ms ease, border-color 200ms ease, background 200ms ease;
+      }
+
+      .modal-close:hover {
+        transform: translateY(-1px);
+        border-color: rgba(245, 166, 35, 0.4);
+        background: rgba(245, 166, 35, 0.10);
+      }
+
+      .carousel {
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 8px 12px 12px;
+      }
+
+      .carousel img {
+        width: 100%;
+        height: 100%;
+        max-height: 560px;
+        object-fit: contain;
+        border-radius: 16px;
+        border: 1px solid rgba(240, 237, 232, 0.10);
+        background: #0a0a0a;
+      }
+
+      .carousel .stack {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .carousel .slide {
+        opacity: 0;
+        transform: scale(0.99);
+        transition: opacity 240ms ease, transform 240ms ease;
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 0 0;
+      }
+
+      .carousel .slide.is-active {
+        opacity: 1;
+        transform: scale(1);
+        position: relative;
+      }
+
+      .carousel-controls {
+        padding: 10px 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .carousel-controls .dots {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 237, 232, 0.18);
+        background: rgba(240, 237, 232, 0.04);
+        cursor: pointer;
+        transition: transform 140ms ease, border-color 200ms ease, background 200ms ease;
+      }
+
+      .dot.is-active {
+        background: rgba(245, 166, 35, 0.35);
+        border-color: rgba(245, 166, 35, 0.55);
+        transform: scale(1.05);
+      }
+
+      .carousel-controls .btn {
+        padding: 10px 12px;
+        border-radius: 14px;
+      }
+
+      .modal-details {
+        padding: 16px 16px 16px;
+        overflow: auto;
+      }
+
+      .modal-details .title {
+        font-family: "Space Grotesk", Inter, system-ui;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        margin: 0 0 10px;
+      }
+
+      .modal-details .summary {
+        margin: 0;
+        color: rgba(240, 237, 232, 0.82);
+        font-size: 14.5px;
+      }
+
+      .modal-details .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 14px 0 14px;
+      }
+
+      .modal-details .tag {
+        border: 1px solid rgba(240, 237, 232, 0.14);
+        background: rgba(240, 237, 232, 0.03);
+        color: rgba(240, 237, 232, 0.86);
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-size: 12.5px;
+      }
+
+      .modal-details .body {
+        margin: 0;
+        color: rgba(240, 237, 232, 0.84);
+        font-size: 14.5px;
+      }
+
+      .modal-details .details-actions {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* Anchor offset for fixed navbar */
+      section {
+        scroll-margin-top: calc(var(--nav-h) + 18px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="nav" id="topNav">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="brand-mark">JA</div>
+          <div class="brand-name">Javokhirbek Abdullaev</div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="cv-document.pdf" target="_blank" rel="noreferrer noopener">Download CV</a>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="mobilePanel" aria-expanded="false">
+            <div class="lines" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+        <div class="mobile-links">
+          <a href="#about" class="mobile-link">About</a>
+          <a href="#projects" class="mobile-link">Projects</a>
+          <a href="#research" class="mobile-link">Research</a>
+          <a href="#experience" class="mobile-link">Experience</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+        <div class="mobile-actions">
+          <a class="btn btn-primary" href="cv-document.pdf" target="_blank" rel="noreferrer noopener">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" aria-label="Hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="container hero-grid">
+          <div class="fade-in">
+            <div class="hero-label">Available for internships &amp; exchange programs</div>
+          </div>
+          <div class="fade-in">
+            <h1>Javokhirbek Abdullaev</h1>
+          </div>
+          <div class="fade-in">
+            <p class="tagline">Economics mind. Developer hands. Building real tools from Central Asia.</p>
+          </div>
+          <div class="hero-ctas fade-in">
+            <a class="btn btn-primary" href="#projects" id="viewWorkBtn">View My Work</a>
+            <a class="btn" href="cv-document.pdf" target="_blank" rel="noreferrer noopener">Download CV</a>
+          </div>
+        </div>
+
+        <a class="scroll-indicator" href="#about" aria-label="Scroll to About">
+          <div class="arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div>Scroll</div>
+        </a>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="profile fade-in">
+              <div class="profile-photo-wrap">
+                <div class="profile-photo">
+                  <img src="profile-photo.jpg" alt="Profile photo of Javokhirbek Abdullaev" />
+                </div>
+              </div>
+            </div>
+
+            <div class="fade-in">
+              <p class="about-bio">
+                I'm an Economics undergraduate at the OSCE Academy in Bishkek, Kyrgyzstan, with a parallel track in
+                Android and web development. I build tools that solve real problems — from air quality monitoring apps
+                to student budgeting platforms. I'm actively seeking international academic exchange opportunities and
+                internships with global organizations.
+              </p>
+
+              <div class="skills">
+                <div class="skills-row" aria-label="Economics skills">
+                  <span class="badge">Econometrics</span>
+                  <span class="badge">R &amp; RStudio</span>
+                  <span class="badge">Data Analysis</span>
+                  <span class="badge">Statistics</span>
+                  <span class="badge">SSRN Research</span>
+                </div>
+                <div class="skills-row" aria-label="Development skills">
+                  <span class="badge">Android (Kotlin)</span>
+                  <span class="badge">Jetpack Compose</span>
+                  <span class="badge">Web Development</span>
+                  <span class="badge">Git</span>
+                  <span class="badge">AI-assisted Dev</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="projects-head">
+            <div>
+              <h2 class="section-title fade-in">Projects</h2>
+              <div class="section-subtle fade-in">Selected work in Android, web, and data-driven tools.</div>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card fade-in" tabindex="0" role="button" aria-label="Open project Tutun details" data-project="tutun">
+              <div class="thumb tutun-thumb">
+                <div class="thumb-swiper" aria-label="Tutun screenshots">
+                  <img src="tutun-screenshot-1.jpg" alt="Tutun screenshot 1" loading="lazy" />
+                  <img src="tutun-screenshot-2.jpg" alt="Tutun screenshot 2" loading="lazy" />
+                  <img src="tutun-screenshot-3.jpg" alt="Tutun screenshot 3" loading="lazy" />
+                </div>
+                <button class="thumb-nav left" type="button" aria-label="Previous Tutun screenshot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="thumb-nav right" type="button" aria-label="Next Tutun screenshot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="content">
+                <h3>Tutun — Bishkek Air Quality App</h3>
+                <p>
+                  Real-time air quality and weather data for Bishkek. Calculates health risk and estimates public health
+                  cost per citizen.
+                </p>
+                <div class="tech-tags" aria-label="Tech tags">
+                  <span class="tech-tag">Kotlin</span>
+                  <span class="tech-tag">Jetpack Compose</span>
+                  <span class="tech-tag">Android</span>
+                  <span class="tech-tag">Open Data</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-primary btn-small" type="button" aria-label="View Tutun details">View Details</button>
+                  <a class="btn btn-small" href="Tutun.v1.1.0.apk" download>Download App</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card fade-in" tabindex="0" role="button" aria-label="Open project Wallet Warden details" data-project="wallet">
+              <div class="thumb wallet-thumb">
+                <div class="thumb-swiper" aria-label="Wallet Warden screenshots">
+                  <img src="wallet-warden-screenshot-1.jpg" alt="Wallet Warden screenshot 1" loading="lazy" />
+                  <img src="wallet-warden-screenshot-2.jpg" alt="Wallet Warden screenshot 2" loading="lazy" />
+                  <img src="wallet-warden-screenshot-3.jpg" alt="Wallet Warden screenshot 3" loading="lazy" />
+                </div>
+                <button class="thumb-nav left" type="button" aria-label="Previous Wallet Warden screenshot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="thumb-nav right" type="button" aria-label="Next Wallet Warden screenshot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="content">
+                <h3>Wallet Warden — Student Budget App</h3>
+                <p>
+                  Wallet Warden is a comprehensive personal finance application meticulously crafted from the ground up to address the unique budgeting challenges faced by university students. The concept originated from a deeply personal experience of navigating the financial complexities of student life. Balancing a part-time job, parental allowances, scholarship funds, and the myriad of daily expenses, from textbooks to coffee, proved surprisingly difficult. Existing budgeting apps were often overly complex, featuring robust but unnecessary functions geared towards working adults with salaries, morgages, and complex investments, leaving me wishing for a streamlined solution.
+
+Wallet Warden fills this void by stripping down budgeting to its essential core, providing only the features that students actually need and will use every single day. The focus is on intuitive simplicity: effortlessly log various sources of income, track precisely where every dollar goes across custom categories, and, most importantly, immediately see if you are on budget for the month. This direct approach eliminates any steep learning curve, ensuring the app is an efficient, daily companion rather than a neglected download. The interface is purposefully clean and lightning-fast, encouraging quick entry and immediate clarity.
+
+A defining characteristic that sets Wallet Warden apart is its dual existence as both a robust Android application and a fully functional, live web version accessible at wallet-warden.one. This cross-platform accessibility means students can manage their finances seamlessly from their phone, tablet, or laptop without requiring installation on every device. Furthermore, this entire project was an entirely independent, full-stack endeavor, demonstrating proficiency across every stage of development, from initial concept and UI/UX design through to back-end architecture, API integration, deployment, and ongoing maintenance. Wallet Warden is not just a tool; it is a practical, full-stack solution to a real, everyday problem faced by students worldwide.
+                  
+                </p>
+                <div class="tech-tags" aria-label="Tech tags">
+                  <span class="tech-tag">Android</span>
+                  <span class="tech-tag">Web App</span>
+                  <span class="tech-tag">Kotlin</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-primary btn-small" type="button" aria-label="View Wallet Warden details">View Details</button>
+                  <a class="btn btn-small" href="https://wallet-warden.one" target="_blank" rel="noreferrer noopener">Visit Website</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section class="section" id="research">
+        <div class="container">
+          <h2 class="section-title fade-in">Research</h2>
+
+          <div class="research-card fade-in" role="article" aria-label="Research paper highlight">
+            <div class="research-inner">
+              <div class="research-meta">
+                <span>SSRN Working Paper · 2026</span>
+                <span style="width: 8px; height: 8px; border-radius: 999px; background: rgba(245, 166, 35, 0.6); border: 1px solid rgba(245, 166, 35, 0.45);"></span>
+              </div>
+              <h3 class="research-title">
+                The Hungry Intelligence: How AI Cannibalized the Global Memory Market and Priced Out the Consumer World (2022–2026)
+              </h3>
+              <p class="research-abstract">
+                Examines how the rapid expansion of AI infrastructure reshaped global memory hardware demand and affected consumer market pricing between 2022 and 2026.
+              </p>
+              <div class="research-actions">
+                <a class="btn btn-primary btn-small" href="https://ssrn.com" target="_blank" rel="noreferrer noopener">Read on SSRN</a>
+              </div>
+              <div class="research-author">Author: Javokhirbek Abdullaev</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="container timeline-wrap">
+          <h2 class="section-title fade-in">Experience</h2>
+
+          <div class="timeline" aria-label="Experience timeline">
+            <div class="timeline-item fade-in">
+              <div class="timeline-card">
+                <div class="top">
+                  <p class="role">Mobile App Developer · Akbarobod Taxi</p>
+                  <div class="when">Dec 2023 – Apr 2024</div>
+                </div>
+                <p class="desc">
+                  Assisted in building and deploying a taxi mobile application. Managed deployment and monitored app performance.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+              <div class="timeline-card">
+                <div class="top">
+                  <p class="role">Accounting Intern · Oybek Farm</p>
+                  <div class="when">Jun 2025 – Jul 2025</div>
+                </div>
+                <p class="desc">
+                  Assisted with financial record keeping and documentation for agricultural operations.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+              <div class="timeline-card">
+                <div class="top">
+                  <p class="role">Accounting Intern · National Bank of Uzbekistan</p>
+                  <div class="when">Oct 2022 – May 2023</div>
+                </div>
+                <p class="desc">
+                  Supported day-to-day accounting and administrative tasks within a banking environment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-compact fade-in" aria-label="Education">
+            <div class="edu-card">
+              <p class="u">OSCE Academy in Bishkek — BA Economics</p>
+              <div class="meta">2023–2027 · Bishkek, Kyrgyzstan</div>
+            </div>
+            <div class="edu-card">
+              <p class="u">Fergana State University — Economics Faculty</p>
+              <div class="meta">2022–2023 · Fergana, Uzbekistan</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-inner">
+            <h2 class="section-title fade-in">Get in Touch</h2>
+            <p class="contact-lead fade-in">Open to internships, academic exchange, and collaboration.</p>
+
+            <div class="contact-email fade-in">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16v16H4z" opacity="0"></path>
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              javokhirbek.abdullayev@gmail.com
+            </div>
+            <div class="contact-links fade-in" aria-label="Contact links">
+              <a class="btn btn-small" href="https://github.com/Javokhirbek-Abdullayev" target="_blank" rel="noreferrer noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 19c-4 1.5-4-2.5-5-3" />
+                  <path d="M14 22v-3.3a2.9 2.9 0 0 0-.8-2.2c2.6-.3 5.3-1.3 5.3-6A4.7 4.7 0 0 0 17 7a4.4 4.4 0 0 0-.1-2S15.9 4.7 14 6a11.7 11.7 0 0 0-5 0C7.1 4.7 6.2 5 6.2 5a4.4 4.4 0 0 0-.1 2A4.7 4.7 0 0 0 5.6 10c0 4.7 2.7 5.7 5.3 6a2.9 2.9 0 0 0-.8 2.2V22" />
+                </svg>
+                GitHub
+              </a>
+              <a class="btn btn-small" href="https://linkedin.com/in/javokhirbek-abdullayev" target="_blank" rel="noreferrer noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+
+            <div class="footer fade-in">© 2026 Javokhirbek Abdullaev · Built with purpose.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-overlay" data-close="true" aria-hidden="true"></div>
+
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Project details">
+        <div class="modal-media">
+          <div class="modal-media-header">
+            <div class="section-subtle" id="modalProjectSubtitle">Screenshots</div>
+            <button class="modal-close" type="button" id="modalCloseBtn" aria-label="Close project modal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="carousel" aria-label="Screenshot carousel">
+            <div class="stack" id="carouselStack"></div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="btn btn-ghost btn-small" type="button" id="carouselPrev" aria-label="Previous screenshot">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Prev
+            </button>
+            <div class="dots" id="carouselDots" aria-label="Carousel dots"></div>
+            <button class="btn btn-ghost btn-small" type="button" id="carouselNext" aria-label="Next screenshot">
+              Next
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <aside class="modal-details" aria-label="Project information">
+          <h3 class="title" id="modalTitle">Project title</h3>
+          <p class="summary" id="modalSummary">Short description</p>
+          <div class="tags" id="modalTags"></div>
+
+          <p class="body" id="modalBody">
+            Expanded description goes here.
+          </p>
+
+          <div class="details-actions" id="modalActions"></div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      // ---------- Navbar blur on scroll ----------
+      const navEl = document.getElementById("topNav");
+      const onScroll = () => {
+        const y = window.scrollY || 0;
+        navEl.classList.toggle("scrolled", y > 10);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // ---------- Mobile menu ----------
+      const hamburger = document.getElementById("hamburger");
+      const mobilePanel = document.getElementById("mobilePanel");
+
+      const setMobileOpen = (isOpen) => {
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+        mobilePanel.classList.toggle("is-open", isOpen);
+        mobilePanel.setAttribute("aria-hidden", String(!isOpen));
+      };
+
+      hamburger?.addEventListener("click", () => {
+        const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+        setMobileOpen(!isOpen);
+      });
+
+      mobilePanel?.addEventListener("click", (e) => {
+        const target = e.target;
+        if (!(target instanceof Element)) return;
+        if (target.matches("a.mobile-link")) setMobileOpen(false);
+      });
+
+      // Close mobile panel on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setMobileOpen(false);
+      });
+
+      // ---------- Fade-in (IntersectionObserver) ----------
+      const fadeEls = Array.from(document.querySelectorAll(".fade-in"));
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) entry.target.classList.add("is-visible");
+          }
+        },
+        { threshold: 0.18 }
+      );
+      fadeEls.forEach((el) => io.observe(el));
+
+      // ---------- Project modal with carousel ----------
+      const projectModal = document.getElementById("projectModal");
+      const modalCloseBtn = document.getElementById("modalCloseBtn");
+      const modalOverlay = projectModal.querySelector(".modal-overlay");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalSummary = document.getElementById("modalSummary");
+      const modalBody = document.getElementById("modalBody");
+      const modalTags = document.getElementById("modalTags");
+      const modalActions = document.getElementById("modalActions");
+      const carouselStack = document.getElementById("carouselStack");
+      const carouselDots = document.getElementById("carouselDots");
+      const carouselPrev = document.getElementById("carouselPrev");
+      const carouselNext = document.getElementById("carouselNext");
+      const modalProjectSubtitle = document.getElementById("modalProjectSubtitle");
+
+      /** @type {Record<string, any>} */
+      const projects = {
+        tutun: {
+          title: "Tutun — Bishkek Air Quality App",
+          summary:
+            "Real-time air quality and weather data for Bishkek. Calculates health risk and estimates public health cost per citizen.",
+          body:
+            "Tutun turns open environmental datasets into an easy, human-readable experience. The app focuses on actionable risk insights: current conditions, health impact context, and an estimated cost view that connects air quality to everyday life. Built with Kotlin and Jetpack Compose for a smooth, modern UI.",
+          tags: ["Kotlin", "Jetpack Compose", "Android", "Open Data"],
+          screenshots: ["tutun-screenshot-1.jpg", "tutun-screenshot-2.jpg", "tutun-screenshot-3.jpg"],
+          actions: [
+            { label: "View on GitHub", href: "https://github.com/Javokhirbek-Abdullayev/Tutun", kind: "primary", external: true },
+            { label: "Download app", href: "Tutun.v1.1.0.apk", kind: "secondary", download: true, external: false },
+          ],
+        },
+        wallet: {
+          title: "Wallet Warden — Student Budget App",
+          summary:
+            "Helps university students track monthly earnings and expenses. Available as Android app and web version.",
+          body:
+            "Wallet Warden helps students stay in control of their budgets with clear monthly views and practical breakdowns. It supports both mobile and web experiences so users can plan on the go and review finances from anywhere. Designed for quick entry, simple insights, and reliable tracking.",
+          tags: ["Android", "Web App", "Kotlin", "JavaScript"],
+          screenshots: ["wallet-warden-screenshot-1.jpg", "wallet-warden-screenshot-2.jpg", "wallet-warden-screenshot-3.jpg"],
+          actions: [
+            { label: "Visit Website", href: "https://wallet-warden.one", kind: "primary", external: true },
+            { label: "View on GitHub", href: "https://github.com/Javokhirbek-Abdullayev/Wallet-Warden", kind: "secondary", external: true },
+          ],
+        },
+      };
+
+      let currentProjectKey = null;
+      let currentIndex = 0;
+      let touchStartX = 0;
+      let touchCurrentX = 0;
+      let carouselTimer = null;
+      let carouselKickoffTimer = null;
+
+      const FIRST_AUTOPLAY_DELAY_MS = 3000;
+      const AUTOPLAY_INTERVAL_MS = 5000;
+      const MANUAL_PAUSE_MS = 20000;
+
+      const buildCarousel = (shotList) => {
+        carouselStack.innerHTML = "";
+        carouselDots.innerHTML = "";
+
+        shotList.forEach((src, idx) => {
+          const imgWrap = document.createElement("div");
+          imgWrap.className = "slide" + (idx === 0 ? " is-active" : "");
+          imgWrap.dataset.index = String(idx);
+
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "Project screenshot " + (idx + 1);
+          img.loading = idx === 0 ? "eager" : "lazy";
+          imgWrap.appendChild(img);
+
+          carouselStack.appendChild(imgWrap);
+
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "dot" + (idx === 0 ? " is-active" : "");
+          dot.setAttribute("aria-label", "Go to screenshot " + (idx + 1));
+          dot.addEventListener("click", () => setCarouselIndex(idx));
+          carouselDots.appendChild(dot);
+        });
+      };
+
+      const setCarouselIndex = (idx) => {
+        const project = projects[currentProjectKey];
+        if (!project) return;
+        const shotList = project.screenshots;
+        if (shotList.length === 0) return;
+        const normalized = (idx + shotList.length) % shotList.length;
+        currentIndex = normalized;
+
+        const slides = Array.from(carouselStack.querySelectorAll(".slide"));
+        slides.forEach((s) => {
+          const i = Number(s.dataset.index);
+          s.classList.toggle("is-active", i === currentIndex);
+        });
+
+        const dots = Array.from(carouselDots.querySelectorAll(".dot"));
+        dots.forEach((d, i) => d.classList.toggle("is-active", i === currentIndex));
+      };
+
+      const startCarouselAutoPlay = () => {
+        if (carouselKickoffTimer) clearTimeout(carouselKickoffTimer);
+        if (carouselTimer) clearInterval(carouselTimer);
+        carouselKickoffTimer = setTimeout(() => {
+          if (!projectModal.classList.contains("is-open")) return;
+          setCarouselIndex(currentIndex + 1);
+          carouselTimer = setInterval(() => {
+            if (!projectModal.classList.contains("is-open")) return;
+            setCarouselIndex(currentIndex + 1);
+          }, AUTOPLAY_INTERVAL_MS);
+        }, FIRST_AUTOPLAY_DELAY_MS);
+      };
+
+      const pauseModalAutoPlayAfterManual = () => {
+        if (carouselKickoffTimer) clearTimeout(carouselKickoffTimer);
+        if (carouselTimer) clearInterval(carouselTimer);
+        carouselKickoffTimer = setTimeout(() => {
+          startCarouselAutoPlay();
+        }, MANUAL_PAUSE_MS);
+      };
+
+      const openModal = (projectKey) => {
+        const project = projects[projectKey];
+        if (!project) return;
+
+        currentProjectKey = projectKey;
+        currentIndex = 0;
+
+        modalTitle.textContent = project.title;
+        modalSummary.textContent = project.summary;
+        modalBody.textContent = project.body;
+
+        modalTags.innerHTML = "";
+        project.tags.forEach((t) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = t;
+          modalTags.appendChild(span);
+        });
+
+        modalActions.innerHTML = "";
+        project.actions.forEach((a) => {
+          const link = document.createElement("a");
+          link.className = a.kind === "primary" ? "btn btn-primary btn-small" : "btn btn-small btn-ghost";
+          link.href = a.href;
+          link.textContent = a.label;
+          link.target = a.external ? "_blank" : "";
+          link.rel = a.external ? "noreferrer noopener" : "";
+          if (a.download) link.setAttribute("download", "");
+          modalActions.appendChild(link);
+        });
+
+        modalProjectSubtitle.textContent = "Screenshots (" + project.screenshots.length + ")";
+        buildCarousel(project.screenshots);
+        setCarouselIndex(0);
+        startCarouselAutoPlay();
+
+        projectModal.classList.add("is-open");
+        projectModal.setAttribute("aria-hidden", "false");
+
+        // Focus close button for accessibility
+        modalCloseBtn.focus({ preventScroll: true });
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeModal = () => {
+        projectModal.classList.remove("is-open");
+        projectModal.setAttribute("aria-hidden", "true");
+        currentProjectKey = null;
+        document.body.style.overflow = "";
+        if (carouselTimer) {
+          clearInterval(carouselTimer);
+          carouselTimer = null;
+        }
+        if (carouselKickoffTimer) {
+          clearTimeout(carouselKickoffTimer);
+          carouselKickoffTimer = null;
+        }
+      };
+
+      // ---------- Inline project thumbnail carousels ----------
+      const thumbSwipers = Array.from(document.querySelectorAll(".thumb-swiper"));
+      thumbSwipers.forEach((swiper) => {
+        const slides = Array.from(swiper.querySelectorAll("img"));
+        if (!slides.length) return;
+        const thumb = swiper.closest(".thumb");
+        const prevBtn = thumb ? thumb.querySelector(".thumb-nav.left") : null;
+        const nextBtn = thumb ? thumb.querySelector(".thumb-nav.right") : null;
+
+        let idx = 0;
+        let startX = 0;
+        let currentX = 0;
+        let autoTimer = null;
+        let kickoffTimer = null;
+        let pauseTimer = null;
+
+        const goTo = (next) => {
+          idx = (next + slides.length) % slides.length;
+          const offset = swiper.clientWidth * idx;
+          swiper.scrollTo({ left: offset, behavior: "smooth" });
+        };
+
+        const startAuto = () => {
+          if (pauseTimer) clearTimeout(pauseTimer);
+          if (kickoffTimer) clearTimeout(kickoffTimer);
+          if (autoTimer) clearInterval(autoTimer);
+          kickoffTimer = setTimeout(() => {
+            goTo(idx + 1);
+            autoTimer = setInterval(() => {
+              goTo(idx + 1);
+            }, AUTOPLAY_INTERVAL_MS);
+          }, FIRST_AUTOPLAY_DELAY_MS);
+        };
+
+        const stopAuto = () => {
+          if (pauseTimer) {
+            clearTimeout(pauseTimer);
+            pauseTimer = null;
+          }
+          if (kickoffTimer) {
+            clearTimeout(kickoffTimer);
+            kickoffTimer = null;
+          }
+          if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+          }
+        };
+
+        const pauseAfterManual = () => {
+          stopAuto();
+          pauseTimer = setTimeout(() => {
+            startAuto();
+          }, MANUAL_PAUSE_MS);
+        };
+
+        swiper.addEventListener(
+          "touchstart",
+          (e) => {
+            stopAuto();
+            startX = e.changedTouches[0].clientX;
+            currentX = startX;
+          },
+          { passive: true }
+        );
+
+        swiper.addEventListener(
+          "touchmove",
+          (e) => {
+            currentX = e.changedTouches[0].clientX;
+          },
+          { passive: true }
+        );
+
+        swiper.addEventListener("touchend", () => {
+          const dx = currentX - startX;
+          if (Math.abs(dx) >= 40) {
+            if (dx < 0) goTo(idx + 1);
+            if (dx > 0) goTo(idx - 1);
+            pauseAfterManual();
+            return;
+          }
+          startAuto();
+        });
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goTo(idx - 1);
+            pauseAfterManual();
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goTo(idx + 1);
+            pauseAfterManual();
+          });
+        }
+
+        // start autoplay initially
+        startAuto();
+      });
+
+      // Card click/keyboard open
+      const projectCards = Array.from(document.querySelectorAll(".project-card[data-project]"));
+      projectCards.forEach((card) => {
+        const key = card.getAttribute("data-project");
+        const open = () => openModal(key);
+        card.addEventListener("click", (e) => {
+          const target = e.target;
+          if (target instanceof Element && target.closest(".thumb-nav")) return;
+          if (target instanceof Element && target.closest(".actions a")) return;
+          open();
+        });
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open();
+          }
+        });
+      });
+
+      modalCloseBtn.addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", closeModal);
+
+      // ESC closes modal, unless user is typing (not expected here, but harmless)
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && projectModal.classList.contains("is-open")) closeModal();
+      });
+
+      carouselPrev.addEventListener("click", () => {
+        setCarouselIndex(currentIndex - 1);
+        pauseModalAutoPlayAfterManual();
+      });
+      carouselNext.addEventListener("click", () => {
+        setCarouselIndex(currentIndex + 1);
+        pauseModalAutoPlayAfterManual();
+      });
+
+      carouselStack.addEventListener(
+        "touchstart",
+        (e) => {
+          if (!projectModal.classList.contains("is-open")) return;
+          touchStartX = e.changedTouches[0].clientX;
+          touchCurrentX = touchStartX;
+        },
+        { passive: true }
+      );
+
+      carouselStack.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!projectModal.classList.contains("is-open")) return;
+          touchCurrentX = e.changedTouches[0].clientX;
+        },
+        { passive: true }
+      );
+
+      carouselStack.addEventListener("touchend", () => {
+        if (!projectModal.classList.contains("is-open")) return;
+        const dx = touchCurrentX - touchStartX;
+        if (Math.abs(dx) < 35) return;
+        if (dx < 0) setCarouselIndex(currentIndex + 1);
+        if (dx > 0) setCarouselIndex(currentIndex - 1);
+        pauseModalAutoPlayAfterManual();
+      });
+
+      // ---------- Preload quick fallback (no console spam) ----------
+      const heroVideo = document.querySelector(".hero-video");
+      if (heroVideo) {
+        heroVideo.addEventListener("error", () => {
+          // If the video is missing, the overlay + background keep the design usable.
+          document.querySelector(".hero-overlay").style.background = "rgba(15, 15, 15, 0.75)";
+        });
+      }
+    </script>
+  </body>
+</html>
+
