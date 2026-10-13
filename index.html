@@ -752,6 +752,7 @@
         background-position: center;
         filter: saturate(0.7) contrast(1.05) brightness(0.65);
         transform: scale(1.03);
+        pointer-events: none;
       }
 
       .research-card::after {
@@ -759,10 +760,12 @@
         position: absolute;
         inset: 0;
         background: rgba(15, 15, 15, 0.70);
+        pointer-events: none;
       }
 
       .research-inner {
         position: relative;
+        z-index: 1;
         padding: 26px 22px;
         display: grid;
         gap: 14px;
@@ -1403,7 +1406,7 @@ A defining characteristic that sets Wallet Warden apart is its dual existence as
                 Examines how the rapid expansion of AI infrastructure reshaped global memory hardware demand and affected consumer market pricing between 2022 and 2026.
               </p>
               <div class="research-actions">
-                <a class="btn btn-primary btn-small" href="https://ssrn.com" target="_blank" rel="noreferrer noopener">Read on SSRN</a>
+                <a class="btn btn-primary btn-small" href="http://ssrn.com/abstract=6395479" target="_blank" rel="noreferrer noopener">Read on SSRN</a>
               </div>
               <div class="research-author">Author: Javokhirbek Abdullaev</div>
             </div>
